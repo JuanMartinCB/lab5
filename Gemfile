@@ -49,6 +49,8 @@ gem "hirb"
 
 gem 'simple_form'
 
+gem "httparty"
+
 # Use Sass to process CSS
 # gem "sassc-rails"
 
