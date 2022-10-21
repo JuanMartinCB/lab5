@@ -1,0 +1,9 @@
+<!--simple form for @monsters-->
+<%= simple_form_for @monster do |m|%>
+    <%= m.error_notification %>
+    <%= m.input :name, placeholder: "Nombre", class: "form-control mb-2" %>
+    <%= m.input :description, placeholder: "Cuéntenos sobre usted", class: "form-control mb-2" %>
+    <%= m.input :phone , placeholder: "Numero de Telefono", class: "form-control mb-2" %>
+    <%= m.input :birthdate %>
+    <%= m.submit "Guardar", class: "btn btn-primary mb-2" %>
+<%end%>
