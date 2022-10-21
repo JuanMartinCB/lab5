@@ -1,1 +1,28 @@
-<%# Update me %><%= @monster.inspect %>
+<%# Update me %>
+
+<% if @monster.tweets.count == 0 %>
+    <h5>Este monstruo no tiene tweets <span><%= link_to "Ir a crear tweet", new_tweet_path %></span></h5>
+    
+<% end %>
+
+
+
+<h1><%= @monster.name %><span><%= link_to "Editar", edit_monster_path(@monster), class: "btn btn-outline-primary ms-2" %></span></h1>
+<table class="table table-bordered ">
+  <thead class="table-dark text-center">
+    <tr>
+      <th scope="col">Descripción</th>
+      <th scope="col">Tweets</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td><%= @monster.description %></td> 
+      
+      <td>
+        <% @monster.tweets.each do |tweet| %>
+          <ul><%= tweet.content%></ul>
+        <% end %>
+      </td>
+    </tr>
+  </tbody>
